@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Guestbook</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.4/css/bulma.min.css"v />
+</head>
+<body class="has-background-light">
+  <section class="hero is-dark">
+    <div class="hero-body has-text-centered">
+      <h1 class="title">Guestbook</h1>
+      <h2 class="subtitle">Leave a message for our team!</h2>
+      <div class="buttons is-centered">
+        <a href="/" class="button is-light">Back to Home</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="box">
+        <div class="field">
+          <label class="label">Name</label>
+          <div class="control">
+            <input id="name" class="input" type="text" placeholder="Your name">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="label">Message</label>
+          <div class="control">
+            <textarea id="message" class="textarea" placeholder="Write something..."></textarea>
+          </div>
+        </div>
+
+        <div class="control has-text-centered">
+          <button class="button is-link" onclick="sendMessage()">Submit</button>
+        </div>
+      </div>
+
+      <div class="box" id="guestbook-list">
+        <h2 class="title is-5">Messages</h2>
+        <div id="entries"></div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    async function loadEntries() {
+      console.log("방명록 리스트");
+      const res = await fetch("/guestbook/list");
+      const data = await res.json();
+
+      const container = document.getElementById("entries")
+      container.innerHTML = "";
+
+      for (let i = 0; i < data.entries.length; i++){
+      const e = data.entries[i];
+      const div = document.createElement("div");
+      div.className = "box";
+      div.innerHTML = "<strong>" + e.name + "</strong><br>" + e.message;
+      container.appendChild(div);
+    }
+    }
+
+    async function sendMessage() {
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      console.log("방명록 쓰기")
+
+      try{
+      const res = await fetch(
+            "/guestbook",{
+            method : "POST",
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify({name, message})
+            });
+            const data = await res.json()
+
+            if(data.ok){
+              loadEntries();
+              document.getElementById("message").value = "";
+            }else{
+              alert("Please write a message!")
+            }
+      }catch(e){
+        console.log(e)
+      }
+    }
+
+    loadEntries();
+  </script>
+</body>
+</html>

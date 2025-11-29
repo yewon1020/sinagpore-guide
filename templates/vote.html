@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Showcase - Personal Portfolio One Page Bulma Theme</title>
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.4/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='showcase.css') }}" />
+    <script>
+      src="https://kit.fontawesome.com/2828f7885a.js"
+      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
+      crossorigin="anonymous"
+    </script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+<body class="has-background-dark">
+    <section class="hero">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <h1 class="title has-text-white"> Singapore Vote</h1>
+                <br> </br>
+                <h2 class="subtitle has-text-grey-lighter"> Which spot would you like to visit most? </h2>
+                <div class="buttons is-centered">
+                    <a href="/" class="button is light is-outlined">
+                        Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class='section-dark'>
+        <div class='container'>
+            <div class='columns is-multiline'>
+
+                    <div class="column is-12 has-text-centered">
+                    <h2 class="title is-4 has-text-white">Choose your favorite spot</h2>
+                    <p class="subtitle is-6 has-text-grey-light">Click a button to vote. Results update below.</p>
+                    <p id="msg" class="has-text-success mt-2"></p>
+
+                </div>
+                <div class="column is-4">
+                    <div class="box vote-card has-text-centered">
+                        <span class="icon is-large has-text-success"><i class="fas fa-walking fa-2x"></i></span>
+                        <h3 class="title is-5 mt-2">Marina Bay Sands</h3>
+                        <p class="is-size-7 mb-3">iconic integrated resort</p>
+                        <button class="button is-success is-fullwidth" onclick="sendVote('marina_bay_sands')">Vote</button>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box vote-card has-text-centered">
+                        <span class="icon is-large has-text-success"><i class="fas fa-walking fa-2x"></i></span>
+                        <h3 class="title is-5 mt-2">Gardens By the Bay</h3>
+                        <p class="is-size-7 mb-3">futuristic nature park in Singapore</p>
+                        <button class="button is-success is-fullwidth" onclick="sendVote('gardens_by_the_bay')">Vote</button>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <div class="box vote-card has-text-centered">
+                        <span class="icon is-large has-text-success"><i class="fas fa-walking fa-2x"></i></span>
+                        <h3 class="title is-5 mt-2">Merlion Park</h3>
+                        <p class="is-size-7 mb-3">renowned tourist attraction and a symbolic landmark of Singapore</p>
+                        <button class="button is-success is-fullwidth" onclick="sendVote('merlion_park')">Vote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- 결과 섹션 -->
+<!-- 결과 섹션 -->
+<div class="section-dark">
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-10">
+                <div class="box results-box">
+                    <h2 class="title is-4 has-text-centered">Live Results</h2>
+
+                    <div class="result-row">
+                        <p>Marina Bay Sands <span id="label-marina_bay_sands" class="has-text-grey-light">(0%)</span></p>
+                        <progress id="bar-marina_bay_sands" class="progress is-success" value="0" max="100">0%</progress>
+                    </div>
+
+                    <div class="result-row">
+                        <p>Gardens By The Bay <span id="label-gardens_by_the_bay" class="has-text-grey-light">(0%)</span></p>
+                        <progress id="bar-gardens_by_the_bay" class="progress is-warning" value="0" max="100">0%</progress>
+                    </div>
+
+                    <div class="result-row">
+                        <p>Merlion Park <span id="label-merlion_park" class="has-text-grey-light">(0%)</span></p>
+                        <progress id="bar-merlion_park" class="progress is-info" value="0" max="100">0%</progress>
+                    </div>
+
+                    <p class="has-text-right is-size-7 mt-3">Total votes: <span id="total">0</span></p>
+                </div>
+
+                <div class="has-text-centered mt-4">
+                    <a href="/" class="button is-light is-outlined">Back to Home</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    <script>
+    async function sendVote(choice){
+        try{
+            const res = await fetch(
+            "/vote",{
+            method : "POST",
+            headers : {"Content-Type" : "application/json"},
+            body : JSON.stringify({choice})
+            });
+            const data = await res.json()
+
+            if(data.ok){
+                document.getElementById("msg").innerText = "투표가 완료되었습니다."
+                await loadResults()
+            }else{
+                document.getElementById("msg").innerText = "Error" + (data.error || "unknown");
+            }
+        }catch(e){
+        console.log(e);
+            document.getElementById("msg").innerText = "Network error.";
+        }
+    }
+    async function loadResults() {
+        const res = await fetch("/results");
+        const data = await res.json();
+
+        const votes = data.votes;
+        const total = data.total;
+
+        const m = votes.marina_bay_sands || 0;
+        const g = votes.gardens_by_the_bay || 0;
+        const me = votes.merlion_park || 0;
+
+        setBar("marina_bay_sands", pct(m,total));
+        setBar("gardens_by_the_bay", pct(g,total));
+        setBar("merlion_park", pct(me,total));
+
+        document.getElementById("total").innerText = total;
+    }
+
+// 투표수 퍼센티지 계산
+    function pct(n,total) {
+        if (total === 0 || isNaN(n) || n < 0) {
+            return 0;
+        } else {
+            return Math.round((n / total) * 100);
+        }
+    }
+
+// 퍼센티지를 막대로 표시
+    function setBar(key, percent) {
+        const bar = document.getElementById(`bar-${key}`);
+        const label = document.getElementById(`label-${key}`);
+        bar.value = percent;
+        label.innerText = `(${percent}%)`;
+    }
+    loadResults();
+
+</script>
+</body>
+</html>

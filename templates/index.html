@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Showcase - Personal Portfolio One Page Bulma Theme</title>
+    <!-- Bulma Version 1-->
+    <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.4/css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='showcase.css') }}" />
+    <script
+      src="https://kit.fontawesome.com/2828f7885a.js"
+      integrity="sha384-WAsFbnLEQcpCk8lM1UTWesAf5rGTCvb2Y+8LvyjAAcxK1c3s5c0L+SYOgxvc6PWG"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="favicon.png" />
+  </head>
+
+  <body>
+    <!-- Begin Preloader -->
+    <div class="preloader-wrapper">
+      <div class="preloader">
+        <img src="img/preloader.gif" alt="" />
+      </div>
+    </div>
+    <!-- End Preloader-->
+    <!-- Begin Scroll Up Button -->
+
+    <form action="#home">
+      <button id="toTop" title="Go to top">
+        <i class="fas fa-angle-up"></i>
+      </button>
+    </form>
+    <!-- End Scroll Up Button -->
+
+    <!-- Begin Header -->
+    <div class="header-wrapper" id="home">
+      <!-- Begin Hero -->
+      <section class="hero is-large">
+        <!-- Begin Mobile Nav -->
+        <nav class="navbar is-fixed-top is-transparent is-hidden-desktop">
+          <!-- Begin Burger Menu -->
+          <div class="navbar-brand">
+            <div class="navbar-burger burger" data-target="mobile-nav">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <!-- End Burger Menu -->
+          <div id="mobile-nav" class="navbar-menu">
+            <div class="navbar-end">
+              <div class="navbar-item">
+                <a class="navbar-item" href="#home">
+                  Home
+                </a>
+              </div>
+              <div class="navbar-item">
+                <a class="navbar-item" href="#about-me">
+                  About Me
+                </a>
+              </div>
+              <div class="navbar-item">
+                <a class="navbar-item" href="#services">
+                  Services
+                </a>
+              </div>
+              <div class="navbar-item">
+                <a class="navbar-item" href="#skills">
+                  Skills
+                </a>
+              </div>
+              <div class="navbar-item">
+                <a class="navbar-item" href="#my-work">
+                  My Work
+                </a>
+              </div>
+              <div class="navbar-item">
+                <a class="navbar-item" href="#contact">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </div>
+        </nav>
+        <!-- End Mobile Nav -->
+        <!-- Begin Hero Content-->
+        <div class="hero-body">
+          <div class="container has-text-centered">
+            <h1 class="subtitle">Hey there, I'm in</h1>
+            <h2 class="title">Singapore</h2>
+            <h1 class="subtitle profession">A beautiful country</h1>
+          </div>
+        </div>
+        <!-- End Hero Content-->
+        <!-- Begin Hero Menu -->
+        <div class="hero-foot ">
+          <div class="hero-foot--wrapper">
+            <div class="columns">
+              <div class="column is-12 hero-menu-desktop has-text-centered is-fixed-top">
+                <ul>
+                  <li class="is-active">
+                    <a href="#home">Home</a>
+                  </li>
+                  <li>
+                    <a href="#about-me">About Singapore</a>
+                  </li>
+                  <li>
+                    <a href="#services">Warnings</a>
+                  </li>
+                  <li>
+                    <a href="#skills">Highlights</a>
+                  </li>
+                  <li>
+                    <a href="#my-work">Gallery</a>
+                  </li>
+                  <li>
+                    <a href="#contact">Contact</a>
+                  </li>
+                  <li>
+                    <a href="vote">Vote</a>
+                  </li>
+                  <li>
+                    <a href="guestbook">Guestbook</a>
+                  </li>
+                  <li>
+                    <a href="map">Map</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Hero Menu -->
+      </section>
+      <!-- End Hero -->
+    </div>
+    <!-- End Header -->
+
+    <!-- Begin Main Content -->
+    <div class="main-content">
+      <!-- Begin About Me Section -->
+      <div class="section-light about-me" id="about-me">
+        <div class="container">
+          <div class="column is-12 about-me">
+            <h1 class="title has-text-centered section-title">About Singapore</h1>
+          </div>
+          <div class="columns is-multiline">
+            <div
+              class="column is-6 has-vertically-aligned-content"
+              data-aos="fade-right"
+            >
+              <p class="is-larger">
+                &emsp;&emsp;<strong
+                  >Singapore is an island and city-state located in Southeast Asia, south of the Malay Peninsula. It is a multicultural society where English, Chinese, Malay, and Tamil are the official languages and diverse races coexist, including Chinese, Malay, and Indian. It is a tropical climate with high temperatures and humidity, and is famous for its strict rule of law, well-developed infrastructure, and clean environment.</strong
+                >
+              </p>
+              <br />
+              <p>
+                Also, Singapore has many famous places.
+              </p>
+              <br />
+              <div class="is-divider"></div>
+              <div class="columns about-links">
+                <div class="column">
+                  <p class="heading">
+                    <strong> </strong>
+                  </p>
+                  <p class="subheading">
+
+                  </p>
+                </div>
+                <div class="column">
+                  <p class="heading">
+                    <strong> </strong>
+                  </p>
+                  <p class="subheading">
+
+                  </p>
+                </div>
+                <div class="column">
+                  <p class="heading">
+                    <strong> </strong>
+                  </p>
+                  <p class="subheading">
+
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="column is-6 right-image " data-aos="fade-left">
+              <img
+                class="is-rounded"
+                src="https://encrypted-tbn1.gstatic.com/licensed-image?q=tbn:ANd9GcSiyrCSV8JjFf6g0qIZYtuWUoTsRBnxWW0NRc_Fz2HyZn0wlafdPo8_LxJ1SZnCpK1igISXKZKQCg-HS9pZiYYflDgdUXKloDgEYiStqA"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End About Me Content -->
+      <!-- Begin Services Content -->
+      <div class="section-color services" id="services">
+        <div class="container">
+          <div class="columns is-multiline">
+            <div
+              class="column is-12 about-me"
+              data-aos="fade-in"
+              data-aos-easing="linear"
+            >
+              <h1 class="title has-text-centered section-title">Warnings</h1>
+
+              <h2 class="subtitle has-text-centered">
+                There are some warnings before you go to Singapore.
+              </h2>
+              <br />
+            </div>
+            <div class="columns is-12">
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fad fa-meteor fa-3x"></i>
+                <hr />
+                <h2>
+                  No chewing gum in and out: Only nicotine gum (for non-smoking supplements) and dental gum (for medical purposes) are allowed in Singapore as an exception. In addition, if you spit out your gum or take out your trash in public, you will be fined 300 SGD (about 270,000 won) per catch, and repeated violations can double the fine
+                </h2>
+              </div>
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fas fa-paint-brush fa-3x"></i>
+                <hr />
+                <h2>
+                  Restrictive regulation on waste dumping: General waste dumping alone can result in a fine of 300 SGD (about 320,000 won), a fine of up to 2,000 SGD (about 2.16 million won) for repeated detection, and a correction labor order. Be careful not to throw away even a small piece of tissue!
+                </h2>
+              </div>
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fas fa-rocket fa-3x"></i>
+                <hr />
+                <h2>
+                  No Food On Public Transport: Food intake is completely prohibited on MRTs (subways) and buses. All food intake, including water, is prohibited, and any caught may result in a fine of 500 SGD (about W540,000).
+                </h2>
+              </div>
+            </div>
+            <hr />
+            <div class="columns is-12">
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fas fa-upload fa-3x"></i>
+                <hr />
+                <h2>
+                  Using Your Right Hand: In Malay or Indian cultures, it is polite to eat or exchange things with your right hand. This is because the left hand is considered to be the hand used in the bathroom and is considered unclean.
+                </h2>
+              </div>
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fas fa-bus fa-3x"></i>
+                <hr />
+                <h2>
+                  Take Off Your Shoes: You must take off your shoes at the entrance when visiting temples, mosques, and some homes. Especially when visiting Hindu temples or mosques.
+                </h2>
+              </div>
+              <div
+                class="column is-4 has-text-centered"
+                data-aos="fade-in"
+                data-aos-easing="linear"
+              >
+                <i class="fas fa-code fa-3x"></i>
+                <hr />
+                <h2>
+                  Don't Copy Singlish: Singaporean English 'singlish' has unique terminating endings such as "laah," "lor," and "meh." Be careful because even if they are used by locals, tourists may feel mocked if they copy them.
+                </h2>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Services Content -->
+      <!-- Begin Skills Content -->
+      <div class="section-light skills" id="skills">
+        <div class="container">
+          <div class="columns is-multiline">
+            <div class="column is-12 about-me">
+              <h1 class="title has-text-centered section-title">Highlights</h1>
+            </div>
+            <div
+              class="column is-6"
+              data-aos="fade-in"
+              data-aos-easing="linear"
+            >
+              <h1>Slow Walking Trails</h1>
+              <progress class="progress" value="70" max="100">30%</progress>
+              <h1>Family-Friendly</h1>
+              <progress class="progress" value="65" max="100">30%</progress>
+              <h1>Budget-Friendly</h1>
+              <progress class="progress" value="58" max="100">45%</progress>
+              <h1>Accessibility(Ferry & Transport)</h1>
+              <progress class="progress" value="90" max="100">60%</progress>
+            </div>
+            <div
+              class="column is-6"
+              data-aos="fade-in"
+              data-aos-easing="linear"
+            >
+              <h1>Scenic Beauty</h1>
+              <progress class="progress" value="85" max="100">30%</progress>
+              <h1>Healing/Relaxation</h1>
+              <progress class="progress" value="95" max="100">30%</progress>
+              <h1>Local Food</h1>
+              <progress class="progress" value="70" max="100">45%</progress>
+              <h1>Photo spots</h1>
+              <progress class="progress" value="60" max="100">60%</progress>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Skills Content -->
+      <!-- Begin Work Content -->
+      <div class="section-dark my-work" id="my-work">
+        <div class="container">
+          <div
+            class="columns is-multiline"
+            data-aos="fade-in"
+            data-aos-easing="linear"
+          >
+            <div class="column is-12">
+              <h1 class="title has-text-centered section-title">Gallery</h1>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://i.natgeofe.com/k/6af87ab7-b964-4f81-861a-8a831c65f5d9/ww-light-displays-trees.jpg?wp=1&w=1084.125&h=609');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxi5TckOab4pTYuYxiLrLZtQ-WzGagw09yQ&s');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/1/16/Marina_Bay_Singapore-3499.jpg');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://static.independent.co.uk/2024/03/18/12/Lazarus%20credit%20httpswww.escapeatlazarus%20%282%29.jpg?quality=75&width=640&crop=3%3A2%2Csmart&auto=webp');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://i.namu.wiki/i/cTKfjW4OTpl6TRXWdH1OxPDMVCpR0lT-DUO_QXiO504LYDBeH9xLcESC755RGzfsYHzsm_DtqBkIhCUmt91hHg.webp');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://www.casadental.com.sg/wp-content/uploads/2024/10/c259f831-b722-4a34-b625-1a8208efa5bc.jpeg');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://ko.skyticket.com/guide/wp-content/uploads/2025/02/b4c121a2-shutterstock_730741423-680x453.jpg');"
+                ></figure>
+              </a>
+            </div>
+            <div class="column is-3">
+              <a href="#">
+                <figure
+                  class="image is-2by1 work-item"
+                  style="background-image: url('https://ko.skyticket.com/guide/wp-content/uploads/2025/02/f3a11d28-pixta_20435546_m-680x509.jpg');"
+                ></figure>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Work Content -->
+      <!-- Begin Contact Content -->
+      <div class="section-light contact" id="contact">
+        <div class="container">
+          <div
+            class="columns is-multiline"
+            data-aos="fade-in-up"
+            data-aos-easing="linear"
+          >
+            <div class="column is-12 about-me">
+              <h1 class="title has-text-centered section-title">
+                Get in touch
+              </h1>
+            </div>
+            <div class="column is-8 is-offset-2">
+              <form
+                action="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Marina_Bay_Sands_in_the_evening_-_20101120.jpg/1200px-Marina_Bay_Sands_in_the_evening_-_20101120.jpg"
+                method="POST"
+              >
+                <div class="field">
+                  <label class="label">Name</label>
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="text"
+                      placeholder="Ex. Jane Smith"
+                      name="Name"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-user"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Email</label>
+                  <div class="control has-icons-left">
+                    <input
+                      class="input"
+                      type="email"
+                      placeholder="Ex. hello@arctheme.com"
+                      name="Email"
+                    />
+                    <span class="icon is-small is-left">
+                      <i class="fas fa-envelope"></i>
+                    </span>
+                  </div>
+                </div>
+                <div class="field">
+                  <label class="label">Message</label>
+                  <div class="control">
+                    <textarea
+                      class="textarea"
+                      placeholder="Textarea"
+                      name="Message"
+                    ></textarea>
+                  </div>
+                </div>
+                <div class="field">
+                  <div class="control ">
+                    <button class="button submit-button">
+                      Submit&nbsp;&nbsp;
+                      <i class="fas fa-paper-plane"></i>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Contact Content -->
+    </div>
+    <!-- End Main Content -->
+
+    <!-- Begin Footer -->
+    <div class="footer">
+      <p>
+        <strong class="white">Bulma</strong> by <a href="http://jgthms.com">Jeremy Thomas</a>.
+        The source code is licensed
+        <a href="https://i.natgeofe.com/k/6af87ab7-b964-4f81-861a-8a831c65f5d9/ww-light-displays-trees.jpg?wp=1&w=1084.125&h=609
+
+">MIT</a>. The website content is licensed
+        <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+      </p>
+    </div>
+    <!-- End Footer -->
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='showcase.js') }}"></script>
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        easing: "ease-out",
+        duration: 800,
+      });
+    </script>
+  </body>
+</html>

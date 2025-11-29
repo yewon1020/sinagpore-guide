@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Singapore Map</title>
+  <link rel="stylesheet" href="https://unpkg.com/bulma@1.0.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <style>
+    .hero.is-dark-gradient{background:linear-gradient(180deg,#1f2c6c 0%,#2f3c8e 100%);color:#fff;}
+    #map {height: 70vh; border-radius:10px; box-shadow:0 5px 20px rgba(14,25,80,.3); background:#2a2a2a;}
+    .section-dark{background:#121419; color:#fff; padding:3rem 1.5rem;}
+  </style>
+</head>
+
+<body class="has-background-dark">
+  <section class="hero is-medium is-dark-gradient">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <h1 class="title">Singapore Map</h1>
+        <h2 class="subtitle"> </h2>
+        <div class="has-text-centered mt-4">
+  <a href="/" class="button is-light is-outlined">Back to Home</a>
+</div>
+      </div>
+    </div>
+  </section>
+  <section class="section-dark">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-10">
+          <div id="map" class="has-text-centered" style="display:flex;align-items:center;justify-content:center;">
+            <span>여기가 지도 영역입니다</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<script>
+    var map = L.map('map');
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:19,
+      attribution:'&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    var spots = [
+      {name:"Marina Bay Sands", latlng:[1.2834,103.8607], desc:"Iconic integrated resort"},
+      {name:"Gardens by the Bay", latlng:[1.2816,103.8636], desc:"Futuristic nature park"},
+      {name:"Merlion Park", latlng:[1.2868,103.8545], desc:"Symbol of Singapore"}
+    ];
+    var bounds = [];
+    for (var i=0;i<spots.length;i++){
+      var s = spots[i];
+      L.marker(s.latlng).addTo(map).bindPopup("<strong>"+s.name+"</strong><br>"+s.desc);
+      bounds.push(s.latlng);
+    }
+    map.fitBounds(bounds, {padding:[30,30]});
+  </script>
+</body>
+</html>
