@@ -1,5 +1,30 @@
 # Introduction
-This is a great guide for people who planned to go to Singapore. It shows famous spots, warnings, and also map where you can see the whole Singapore. It tells you a lot of information for your Singapre trip!
+Welcome to the website repository!
+This website is designed to help travelers explore , one of the most vibrant and modern cities in the world.
+Our guide provides useful information about famous landmarks, local culture, highlights, map, and travel tips to make your trip to Singapore enjoyable and stress-free. 
+
+## About This Website
+The Singapore Trip Guide includes:
+- Famous landmarks and attractions
+- Map 
+- Travel tips
+- Fun activities and places to visit
+- Guestbook
+-   
+Whether you are visiting Singapore for the first time or planning a short trip, this website is made to help you experience the best of the city.
+
+## Why Singapore?  
+Singapore is known for its:
+- Clean and safe environment
+- Diverse cultures and traditions
+- World-class public transportation
+- Delicious food from many cultures
+- Modern architecture and green spaces
+  
+This project was created as a learning website to practice web development while sharing helpful travel information about Singapore.
+
+Thank you for checking out the website!  
+
 
 # Image
 ## Main page:
